@@ -1,0 +1,11 @@
+.letters-block {
+    position: absolute;
+    top: 13px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+
+    span {
+        margin: 0 3px;
+    }
+}

@@ -1,0 +1,18 @@
+.logo-block {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    button {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    span {
+        display: block;
+    }
+}

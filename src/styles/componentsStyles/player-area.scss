@@ -1,0 +1,30 @@
+.player-area-block {
+    width: 310px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    background-color: $background-color;
+
+    .start-game-block {
+        width: 280px;
+        margin-bottom: 15px;
+
+        &__private {
+            margin: 18px 5px;
+        }
+
+        &__buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .text {
+            text-align: center;
+            font-weight: 800;
+            font-size: 12px;
+        }
+    }
+}

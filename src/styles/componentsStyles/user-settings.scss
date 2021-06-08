@@ -1,0 +1,32 @@
+.settings-block,
+.controls-block {
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    background-color: $background-gray;
+    border: 2px solid $main-color;
+    border-radius: 8px;
+}
+
+.settings-block {
+    justify-content: center;
+
+    &__avatar {
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+
+        span {
+            margin: 0 20px;
+        }
+    }
+
+    &__name {
+        margin: 40px 0 31px 0;
+    }
+}

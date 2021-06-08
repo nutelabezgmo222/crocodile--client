@@ -1,0 +1,23 @@
+.canvas-block {
+    height: 450px;
+    position: relative;
+    border: 2px solid $main-color;
+    border-radius: 8px;
+
+    canvas {
+        background-color: #FFF;
+        border-radius: 8px;
+    }
+
+    .avatar-block {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+.word-hint {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}

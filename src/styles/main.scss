@@ -1,0 +1,35 @@
+@import './stylesLibrary/main-styles.scss';
+@import './componentsStyles/user-settings.scss';
+@import './componentsStyles/user-controls.scss';
+@import './componentsStyles/logo.scss';
+@import './componentsStyles/canvas.scss';
+@import './componentsStyles/avatar.scss';
+@import './componentsStyles/letter.scss';
+@import './componentsStyles/timer.scss';
+@import './componentsStyles/colors-bar.scss';
+@import './componentsStyles/tool-bar.scss';
+@import './componentsStyles/drawing-area.scss';
+@import './componentsStyles/player-area.scss';
+@import './componentsStyles/player-list.scss';
+@import './componentsStyles/game-chat.scss';
+@import './componentsStyles/modal.scss';
+
+@import './pageStyles/start-page.scss';
+@import './pageStyles/game-page.scss';
+@import './pageStyles/not-found-page.scss';
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: no-repeat center/ cover url("./stylesLibrary/images/background.png");
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.app {
+  max-width: 1100px;
+  padding: 100px 0 150px 0;
+}

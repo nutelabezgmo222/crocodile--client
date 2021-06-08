@@ -1,0 +1,9 @@
+.avatar-block {
+    display: flex;
+    align-items: center;
+
+    &__name {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+}
