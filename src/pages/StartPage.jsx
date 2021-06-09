@@ -2,9 +2,9 @@ import React from 'react'
 import { Logo, UserSettings, UserControls } from '../components';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { WarningModal } from '../components';
+import { WarningModal, SearchGameModal } from '../components';
 
-function StartPage({ onFindGameClick, onNewGameClick, onJoibByCodeClick, socketGetConnection }) {
+function StartPage({ onFindGameClick, onNewGameClick, onJoibByCodeClick, socketGetConnection, onUserInfoChange }) {
   
   let totalPlayers = useSelector(state => state.game.totalPlayers);
   const [loading, setLoading] = React.useState(false);
@@ -35,10 +35,9 @@ function StartPage({ onFindGameClick, onNewGameClick, onJoibByCodeClick, socketG
       <span className="player-number">Игроков онлайн: {totalPlayers}</span>
       {
         loading ?
-          <div>
-            <p>Ищем игру...</p>
-            <button onClick={findAbort}>Отмена</button>
-          </div> :
+          <SearchGameModal>
+            <button className='button-long-filled' onClick={findAbort}>Отмена</button>
+          </SearchGameModal>:
           errorMessage ?
           <WarningModal title={errorMessage.title} body={errorMessage.body} >
               <Link to="/">
@@ -50,7 +49,9 @@ function StartPage({ onFindGameClick, onNewGameClick, onJoibByCodeClick, socketG
             <Logo>
               <span className="logo-big"></span>
             </Logo>
-            <UserSettings />
+              <UserSettings
+                onUserInfoChange={onUserInfoChange}
+              />
             <UserControls
               onNewGameClick={onNewGameClick}
               onQuickGameClick={handleFindGameClick}

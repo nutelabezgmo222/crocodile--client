@@ -16,6 +16,8 @@ function Canvas({socket, children}) {
     if (isRoundStarted) {
       drawHandler({ type: "clear" })
       handleStartNewRound();
+    } else {
+      handleEndRound();
     }
   }, [isRoundStarted])
 
@@ -53,12 +55,13 @@ function Canvas({socket, children}) {
       socket.removeListener("image:change");
     }
   }, [])
-
-  const handleStartNewRound = () => {
+  const handleEndRound = () => {
     dispatch(setTool(null));
-    let leader = users.find(user => user.userID === leaderID);
     canvasRef.current.removeEventListener("mouseup", mouseUpHandler);
     canvasRef.current.removeEventListener("mousedown", mouseDownHandler);
+  }
+  const handleStartNewRound = () => {
+    let leader = users.find(user => user.userID === leaderID);
     if (leader) {
       if (leader.userID === userID) {
         let brush = new Brush(canvasRef.current, socket);

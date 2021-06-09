@@ -17,3 +17,4 @@ export { default as PlayerList } from "./game/PlayerList";
 export { default as WarningModal } from "./modal/WarningModal";
 export { default as ChooseModal } from "./modal/ChooseModal";
 export { default as WinnerModal } from "./modal/WinnerModal";
+export { default as SearchGameModal } from "./modal/SearchGameModal";
