@@ -32,7 +32,7 @@ export const gmC = {
 
 export const c = {
   sessionID: "crocodile_sessionID",
-  SERVER_URL: "https://crocodilo.herokuapp.com/",
+  SERVER_URL: "http://localhost:5000",
   playtime: 15,
 };
 

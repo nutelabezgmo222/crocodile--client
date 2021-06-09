@@ -4,4 +4,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    .avatar-block, .timer-block, .word-hint {
+        padding: 5px 10px;
+        z-index: 2;
+        background-color: tomato;
+        border-radius: 10px;
+        border: 2px solid #000;
+    }
 }

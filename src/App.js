@@ -263,7 +263,24 @@ function App() {
       }
     });
   };
-  
+
+  const handleUserInfoChange = (action) => {
+    switch (action.type) {
+      case "username": {
+        dispatch(setUsername(action.value));
+        break;
+      }
+      case "avatarID": {
+        dispatch(setAvatar(action.value));
+        break;
+      }
+      default: {
+        return;
+      }
+    }
+    socket.current.emit("user:infoChange", action);
+  }
+
   return (
     <div className="app">
       {modalData.isSeen ? (
@@ -282,6 +299,7 @@ function App() {
             onNewGameClick={handleNewGameClick}
             onFindGameClick={handleFindGameClick}
             onJoibByCodeClick={handleJoinByCode}
+            onUserInfoChange={handleUserInfoChange}
           />
         </Route>
         <Route path="/game/:roomID" exact>

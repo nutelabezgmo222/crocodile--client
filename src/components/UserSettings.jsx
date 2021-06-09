@@ -4,23 +4,32 @@ import { setUsername, setAvatar } from '../store/actions/userActions';
 import { avatars } from '../helpers/constants';
 
 
-function UserSettings() {
+function UserSettings({onUserInfoChange}) {
   const dispatch = useDispatch();
   const inputRef = React.useRef();
   const user = useSelector(state => state.user);
   const changeName = () => {
     if (user.username !== inputRef.current.value) {
-      dispatch(setUsername(inputRef.current.value.trim()))
+      onUserInfoChange({
+        type: "username",
+        value: inputRef.current.value.trim(),
+      })
     }
   }
   const changeAvatar = (way) => {
+    let index = null;
     if ((user.avatarID + way) > Object.keys(avatars).length - 1) {
-      dispatch(setAvatar(0));
+      index = 0;
     } else if ((user.avatarID + way) < 0) {
-      dispatch(setAvatar(Object.keys(avatars).length - 1));
+      index = Object.keys(avatars).length - 1;
     } else {
-      dispatch(setAvatar(user.avatarID + way))
+      index = user.avatarID + way;
     }
+
+    onUserInfoChange({
+        type: "avatarID",
+        value: index,
+    })
   }
   return (
     <div className="settings-block"> 
